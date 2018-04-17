@@ -25,7 +25,7 @@ class JPMeCabTokenizer(TokenizerI):
         	if ( node.posid >= 36 and node.posid <= 67 ) or \
         		( node.posid >= 31 and node.posid <= 33 ) :
         		word = node.feature.split(',')[6].decode('utf-8')
-        		word = word == '*' and node.surface or word
+        		word = word == '*' and node.surface.decode('utf-8') or word
         		if word not in stopwords :
         			results.append(word)
         	node = node.next
