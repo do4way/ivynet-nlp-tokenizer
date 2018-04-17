@@ -14,6 +14,7 @@ class JPMeCabTokenizer(TokenizerI):
     def __init__(self) :
         import MeCab
         self.mecab = MeCab.Tagger('-Ochasen')
+        self.mecab.parseToNode("")
 
     def tekens(self) :
         return self.tokens
